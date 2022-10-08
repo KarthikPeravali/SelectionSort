@@ -1,0 +1,47 @@
+
+
+
+// ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+let unsortedIntegers = [5, 1, 4, 2, 8]
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+// ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧
+
+
+// Add your code below:
+var unsortedWords = [String]()
+func read(_ array: inout [String]) {
+    var line : String?
+
+    repeat {
+        line = readLine()
+        if line != nil {
+            array.append(line!)
+        }
+    } while line != nil
+}
+func selectionSort(_ array: inout [String]) {
+    var finalArray = array
+    var passCount = 0
+    var totalSwapCount = 0
+   // print("Pass: 0, Swaps: 0/0, Array: \(array)")
+    for x in 0 ..< finalArray.count - 1 {     // 3
+
+        var lowest = x
+        for y in x + 1 ..< finalArray.count {   // 4
+            if finalArray[y] < finalArray[lowest] {
+                lowest = y
+            }
+        }
+
+        if x != lowest {               // 5
+            finalArray.swapAt(x, lowest)
+        }
+        totalSwapCount += 1
+        passCount += 1
+ //       print("Pass: \(passCount), Swaps: 1/\(totalSwapCount), Array: \(finalArray)")
+    }
+    
+}
+read(&unsortedWords)
+selectionSort(&unsortedWords)
